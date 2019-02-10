@@ -12,9 +12,9 @@ open class GPXRoot: GPXElement {
     public var version: String? = "1.1"
     public var creator: String?
     public var metadata: GPXMetadata?
-    public var waypoints = [GPXWaypoint]()
-    public var routes = [GPXRoute]()
-    public var tracks = [GPXTrack]()
+    public var waypoints: ContiguousArray<GPXWaypoint> = []
+    public var routes: ContiguousArray<GPXRoute> = []
+    public var tracks: ContiguousArray<GPXTrack> = []
     public var extensions: GPXExtensions?
     
     // MARK:- Instance
@@ -60,7 +60,7 @@ open class GPXRoot: GPXElement {
         }
     }
     
-    public func add(waypoints: [GPXWaypoint]) {
+    public func add(waypoints: ContiguousArray<GPXWaypoint>) {
         self.waypoints.append(contentsOf: waypoints)
     }
     
@@ -88,9 +88,10 @@ open class GPXRoot: GPXElement {
         }
     }
     
-    public func add(routes: [GPXRoute]) {
+    public func add(routes: ContiguousArray<GPXRoute>) {
         self.routes.append(contentsOf: routes)
     }
+
     
     public func remove(route: GPXRoute) {
         let contains = routes.contains(route)
@@ -114,7 +115,7 @@ open class GPXRoot: GPXElement {
         }
     }
     
-    public func add(tracks: [GPXTrack]) {
+    public func add(tracks: ContiguousArray<GPXTrack>) {
         self.tracks.append(contentsOf: tracks)
     }
     

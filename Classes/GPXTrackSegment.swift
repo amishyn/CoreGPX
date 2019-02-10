@@ -9,7 +9,7 @@ import Foundation
 
 open class GPXTrackSegment: GPXElement {
     
-    public var trackpoints = [GPXTrackPoint]()
+    public var trackpoints: ContiguousArray<GPXTrackPoint> = []
     public var extensions: GPXExtensions?
     
     
@@ -36,7 +36,7 @@ open class GPXTrackSegment: GPXElement {
         }
     }
     
-    open func add(trackpoints: [GPXTrackPoint]) {
+    open func add(trackpoints: ContiguousArray<GPXTrackPoint>) {
         self.trackpoints.append(contentsOf: trackpoints)
     }
     

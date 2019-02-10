@@ -14,8 +14,8 @@ class ParseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var tracks = [GPXTrack]()
-    var waypoints = [GPXWaypoint]()
+    var tracks: ContiguousArray<GPXTrack> = []
+    var waypoints: ContiguousArray<GPXWaypoint> = []
     var waypoint = GPXWaypoint()
     var trackpoint = GPXTrackPoint()
     

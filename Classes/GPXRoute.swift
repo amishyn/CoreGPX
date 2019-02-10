@@ -16,7 +16,7 @@ open class GPXRoute: GPXElement {
     var links = [GPXLink]()
     var type = String()
     var extensions: GPXExtensions?
-    var routepoints = [GPXRoutePoint]()
+    var routepoints: ContiguousArray<GPXRoutePoint> = []
     var numberValue = String()
     var number = Int()
     
@@ -71,7 +71,7 @@ open class GPXRoute: GPXElement {
         }
     }
     
-    func add(routepoints: [GPXRoutePoint]) {
+    func add(routepoints: ContiguousArray<GPXRoutePoint>) {
         self.routepoints.append(contentsOf: routepoints)
     }
     

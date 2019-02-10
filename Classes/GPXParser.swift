@@ -63,18 +63,19 @@ open class GPXParser: NSObject, XMLParserDelegate {
     var trackpoint = GPXTrackPoint()
     
     // Arrays of elements
-    var waypoints = [GPXWaypoint]()
-    var routes = [GPXRoute]()
-    var routepoints = [GPXRoutePoint]()
+    var waypoints: ContiguousArray<GPXWaypoint> = []
+    
+    var routes: ContiguousArray<GPXRoute> = []
+    var routepoints: ContiguousArray<GPXRoutePoint> = []
+    
+    var tracks: ContiguousArray<GPXTrack> = []
+    var tracksegements: ContiguousArray<GPXTrackSegment> = []
+    var trackpoints: ContiguousArray<GPXTrackPoint> = []
     
     // Dictionary of element
     var waypointDict = [String:String]()
     var trackpointDict = [String:String]()
     var routepointDict = [String:String]()
-    
-    var tracks = [GPXTrack]()
-    var tracksegements = [GPXTrackSegment]()
-    var trackpoints = [GPXTrackPoint]()
     
     var metadata: GPXMetadata? = GPXMetadata()
     var extensions: GPXExtensions? = GPXExtensions()

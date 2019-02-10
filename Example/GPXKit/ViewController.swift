@@ -11,8 +11,8 @@ import CoreGPX
 
 class ViewController: UIViewController {
     
-    var tracks = [GPXTrack]()
-    var waypoints = [GPXWaypoint]()
+    //var tracks: ContiguousArray<GPXTrack> = []
+    //var waypoints = [GPXWaypoint]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         let urlString : String = "https://raw.githubusercontent.com/gps-touring/sample-gpx/master/BrittanyJura/Courgenay_Ballon-DAlsace.gpx"
         let url: URL = URL(string: urlString)!
-        
+        /*
         // GPXRoot object that contains all the data parsed from GPXParser.
         let gpx = GPXParser(withURL: url).parsedData()
         
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 }
             }
         }
- 
+ */
     }
 
     override func didReceiveMemoryWarning() {

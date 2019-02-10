@@ -10,7 +10,7 @@ import Foundation
 open class GPXTrack: GPXElement {
     
     public var links = [GPXLink]()
-    public var tracksegments = [GPXTrackSegment]()
+    public var tracksegments: ContiguousArray<GPXTrackSegment> = []
     public var numberValue = String()
     public var name = String()
     public var comment = String()
@@ -67,7 +67,7 @@ open class GPXTrack: GPXElement {
         }
     }
     
-    open func add(trackSegments: [GPXTrackSegment]) {
+    open func add(trackSegments: ContiguousArray<GPXTrackSegment>) {
         self.tracksegments.append(contentsOf: trackSegments)
     }
     

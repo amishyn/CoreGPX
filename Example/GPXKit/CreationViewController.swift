@@ -20,8 +20,8 @@ class CreationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateField: UITextField!
     
     var typeSwitchIndex = Int()
-    var waypoints = [GPXWaypoint]()
-    var trackpoints = [GPXTrackPoint]()
+    var waypoints: ContiguousArray<GPXWaypoint> = []
+    var trackpoints: ContiguousArray<GPXTrackPoint> = []
     var gpxString = String()
     
     @IBAction func insertElementButton(_ sender: Any) {
