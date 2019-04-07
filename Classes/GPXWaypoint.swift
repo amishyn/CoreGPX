@@ -30,7 +30,13 @@ open class GPXWaypoint: GPXElement {
     ///
     /// Should be in unit **meters** (m)
     public var elevation: Double?
-    
+
+    /// Speed of current point
+    ///
+    /// Should be in unit **meters/sec** (m/s)
+    public var speed: Double?
+
+ 
     /// Date and time of current point
     ///
     /// Should be in **Coordinated Universal Time (UTC)**, without offsets, not local time.
@@ -192,6 +198,7 @@ open class GPXWaypoint: GPXElement {
         self.time = ISO8601DateParser.parse(dictionary ["time"])
         super.init()
         self.elevation = Convert.toDouble(from: dictionary["ele"])
+        self.speed = Convert.toDouble(from: dictionary["speed"])
         self.latitude = Convert.toDouble(from: dictionary["lat"])
         self.longitude = Convert.toDouble(from: dictionary["lon"])
         self.magneticVariation = Convert.toDouble(from: dictionary["magvar"])
