@@ -31,6 +31,7 @@ open class GPXTrackPoint: GPXWaypoint {
         super.init()
         self.time = ISO8601DateParser.parse(dictionary ["time"])
         self.elevation = Convert.toDouble(from: dictionary["ele"])
+        self.speed = Convert.toDouble(from: dictionary["speed"])
         self.latitude = Convert.toDouble(from: dictionary["lat"])
         self.longitude = Convert.toDouble(from: dictionary["lon"])
         self.magneticVariation = Convert.toDouble(from: dictionary["magvar"])
